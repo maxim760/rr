@@ -27,7 +27,7 @@ export const ConfirmOrder: FC<IProps> = ({ onClose, open, id, invalidateQuery })
     <ConfirmDialog
       onClose={onClose}
       open={open}
-      title="Удаление курьера"
+      title="Подтверждение"
       isLoading={isLoading}
       onSubmit={onSubmit}
     />
