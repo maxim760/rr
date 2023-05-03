@@ -18,14 +18,6 @@ authRouter.get("/me", passport_1.default.authenticate('jwt', { session: false })
 authRouter.get("/users", passport_1.default.authenticate('jwt', { session: false }), auth_controller_1.default.getAllUsers);
 authRouter.get("/yandex", passport_1.default.authenticate('yandex', { session: false }));
 authRouter.get("/yandex/callback", passport_1.default.authenticate("yandex", { display: "popup", session: false }), auth_controller_1.default.oauthCallback);
-authRouter.get("/vk", passport_1.default.authenticate('vkontakte', { scope: ["email"], session: false }));
-authRouter.get("/vk/callback", passport_1.default.authenticate("vkontakte", { display: "popup", session: false }), auth_controller_1.default.oauthCallback);
-authRouter.get("/slack", passport_1.default.authenticate('slack', { session: false }));
-authRouter.get("/slack/callback", passport_1.default.authenticate("slack", { display: "popup", session: false }), auth_controller_1.default.oauthCallback);
-authRouter.get("/google", passport_1.default.authenticate('google', { session: false }));
-authRouter.get("/google/callback", passport_1.default.authenticate("google", { display: "popup", session: false }), auth_controller_1.default.oauthCallback);
-authRouter.get("/github", passport_1.default.authenticate('github', { session: false, scope: ["user"] }));
-authRouter.get("/github/callback", passport_1.default.authenticate("github", { display: "popup", session: false }), auth_controller_1.default.oauthCallback);
 authRouter.get("/users", passport_1.default.authenticate('jwt', { session: false }), auth_controller_1.default.getAllUsers);
 authRouter.put("/address", passport_1.default.authenticate('jwt', { session: false }), auth_controller_1.default.updateUserAddress);
 authRouter.put("/cash", passport_1.default.authenticate('jwt', { session: false }), auth_controller_1.default.updateUserCash);

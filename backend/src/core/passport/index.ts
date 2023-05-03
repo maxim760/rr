@@ -1,19 +1,11 @@
 import { PassportStatic } from "passport"
 import { userRepo } from "../../user/user.repo"
-import applyGithubStrategy from "./github"
-import applyGoogleStrategy from "./google"
 import applyJwtStrategy from "./jwt"
 import applyLocalStrategy from "./local"
-import applySlackStrategy from "./slack"
-import applyVkStrategy from "./vk"
 import applyYandexStrategy from "./yandex"
 
 export const applyStrategies = (passport: PassportStatic) => {
   applyYandexStrategy(passport)
-  applySlackStrategy(passport)
-  applyGoogleStrategy(passport)
-  applyGithubStrategy(passport)
-  applyVkStrategy(passport)
   applyJwtStrategy(passport)
   applyLocalStrategy(passport)
 
