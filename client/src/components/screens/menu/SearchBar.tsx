@@ -21,7 +21,7 @@ export const SearchBar: FC<IProps> = ({methods, refetch}) => {
       <Grid container noValidate spacing={1} sx={{justifyContent: "center"}} component="form" onSubmit={handleSubmit(onSubmit)}>
         <Grid item xs={12} md={5}>
           <Input
-            placeholder="Введите..."
+            label="Введите..."
             name='query'
           />
         </Grid>

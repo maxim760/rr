@@ -56,7 +56,7 @@ export const CertificateGiftPage: React.FC<IProps> = ({ }) => {
           <Grid container noValidate spacing={0} sx={{justifyContent: "center"}} component="form" onSubmit={handleSubmit(onSubmit)}>
             <Grid item xs={11} md={5}>
               <Input
-                placeholder="Введите..."
+                label="Введите..."
                 name='query'
               />
             </Grid>
