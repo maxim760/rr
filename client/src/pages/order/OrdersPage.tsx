@@ -59,7 +59,7 @@ export const OrdersPage: React.FC<IProps> = ({ }) => {
           goods: item.goods.reduce((acc, goodsItem) => {
             const index = acc.findIndex(item => item.item.id === goodsItem.id)
             if (index !== -1) {
-              return [...acc.slice(0, index), {item: acc[index].item, count: acc[index].count + 1}, acc.slice(index + 1)] as IGoodsWithCount[]
+              return [...acc.slice(0, index), {item: acc[index].item, count: acc[index].count + 1}, ...acc.slice(index + 1)] as IGoodsWithCount[]
             }
             return [...acc, {item: goodsItem, count: 1}]
           }, [] as IGoodsWithCount[])
@@ -67,6 +67,7 @@ export const OrdersPage: React.FC<IProps> = ({ }) => {
       }
     }
   })
+  console.log({data})
   return (
     <Layout title="История заказов">
       {isLoading && <Loader />}
