@@ -1,0 +1,1 @@
+export type DefaultSuccessResponse = {date: true}
