@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RoleTypes } from "src/api/types/models/User";
 import { RequireAuth } from "src/components/utils/router/RequireAuth";
-import { CertificateGiftPage, CertificatePage, HomePage, IngredientsPage, LoginPage, MenuPage, NotFoundPage, OrdersPage, SignupPage, CurierPage } from "src/pages";
+import { CertificateGiftPage, CertificatePage, HomePage, LoginPage, MenuPage, NotFoundPage, OrdersPage, SignupPage, CurierPage } from "src/pages";
 import { GoodsPage } from "src/pages/GoodsPage";
 export const RouterPaths = {
   Profile: "/",

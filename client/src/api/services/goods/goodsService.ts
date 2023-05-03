@@ -1,6 +1,6 @@
 import { api } from "src/api/host";
 import { DefaultSuccessResponse } from "src/api/types/common";
-import { CreateGoodsDto, EditGoodsDiscountDto, EditGoodsItemDto, EditGoodsProductsDto, GetGoodsDto } from "./dto";
+import { CreateGoodsDto, EditGoodsDiscountDto, EditGoodsItemDto, GetGoodsDto } from "./dto";
 import { IGoods, IGoodsResponse } from "./response";
 
 class GoodsApi {
@@ -23,10 +23,7 @@ class GoodsApi {
     const { data } = await api.put<DefaultSuccessResponse>(GoodsApi.path("/edit/discount"), dto)
     return data
   }
-  async editProducts(dto: EditGoodsProductsDto) {
-    const { data } = await api.put<DefaultSuccessResponse>(GoodsApi.path("/edit/products"), dto)
-    return data
-  }
+
 }
 
 export const goodsApi = new GoodsApi()

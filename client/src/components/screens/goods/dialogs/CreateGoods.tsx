@@ -25,7 +25,6 @@ const getValidationSchema = () =>
     price: FormFields.RequiredNumberPositive,
     goodsType: FormFields.RequiredStr,
     img: FormFields.RequiredStr,
-    products: FormFields.RequiredCompleteMultiple
   })
 
 type IProps = {
