@@ -125,9 +125,9 @@ export const Header: FC<IProps> = ({}) => {
                   </NavbarLink>
                 </ListItem>
               ))}
-              {user && (<ListItem key="logout" disablePadding>
-                    <NavbarLink to={RouterPaths.Login} onClick={onClickLogout} classesInner>
-                      <ListItemText primary={item.title} className="link" />
+              {user && (<ListItem key="logout" disablePadding onClick={onClickLogout}>
+                    <NavbarLink to={RouterPaths.Login}  classesInner>
+                      <ListItemText primary="Выход" className="link" />
                     </NavbarLink>
                   </ListItem>
               )}
