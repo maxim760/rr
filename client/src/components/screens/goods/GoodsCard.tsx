@@ -23,11 +23,6 @@ export const GoodsCard: FCWithChildren<IProps> = ({item, children, showCount}) =
       sx={{height: "100%"}}
       message={(
         <Box>
-          {item.left < 10 && <Typography sx={{ fontSize: "0.75rem", color: "error.main", mt: 1 }}>{
-            item.left
-              ? "Скоро закончится"
-              : "Закончилось"
-          }</Typography>}
           <Typography fontSize={"0.8rem"} sx={{mt: 0.5, textAlign: "center"  }}>{item.description}</Typography>
           {item.price === item.currentPrice ? (
             <Typography sx={{mt: 1}} fontSize={"1.25rem"} fontWeight={600}>{CurrencyFormatter.format(item.price)}</Typography>
@@ -57,7 +52,6 @@ export const GoodsCard: FCWithChildren<IProps> = ({item, children, showCount}) =
           id: item.id,
           items: [
             { label: "Тип", value: item.goodsType },
-            ...(showCount ? [{label: "Осталось", value: item.left}] : [])
           ]
         }
       ]}
