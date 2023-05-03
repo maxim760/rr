@@ -57,7 +57,6 @@ export const CertificateGiftPage: React.FC<IProps> = ({ }) => {
             <Grid item xs={11} md={5}>
               <Input
                 placeholder="Введите..."
-                hiddenLabel
                 name='query'
               />
             </Grid>

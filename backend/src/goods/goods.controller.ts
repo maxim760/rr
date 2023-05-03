@@ -18,9 +18,6 @@ class GoodsController {
       }
       const data = await goodsRepo
         .createQueryBuilder("goods")
-        .leftJoinAndSelect("goods.products", "products")
-        .leftJoin("product_goods", "pg", "pg.goods_id = goods.id")
-        .leftJoin("products", "product", "product.id = pg.product_id")
         .where([
           {name: ILike(`%${query}%`)},
           {description: ILike(`%${query}%`)},
@@ -32,13 +29,6 @@ class GoodsController {
               .orWhere("0 = :max", {max: Math.max(0, max)});
           })
         )
-        .andWhere("pg.goods_id = goods.id")
-        .addSelect(subQuery =>
-          subQuery.select("MIN(product.count)", "left")
-            .from("product_goods", "pg")
-            .leftJoin("products", "product", "product.id = pg.product_id")
-            .where("pg.goods_id = goods.id")
-          , "goods_left")
         .getMany()
       return res.json(data)
     } catch (error) {

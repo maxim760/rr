@@ -22,7 +22,6 @@ export const SearchBar: FC<IProps> = ({methods, refetch}) => {
         <Grid item xs={12} md={5}>
           <Input
             placeholder="Введите..."
-            hiddenLabel
             name='query'
           />
         </Grid>

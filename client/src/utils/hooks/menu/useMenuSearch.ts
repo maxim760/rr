@@ -36,9 +36,6 @@ export const useMenuSearch = ({onlyActive}: IOptions = {}) => {
     queryFn: () => goodsApi.get({max, min, query}),
     queryKey: [invalidateQuery],
     onError: () => toast.error("Ошибка при поиске"),
-    select: onlyActive
-      ? (data) => data.filter(item => item.left > 0)
-      : undefined
   })
   return {
     queryData,

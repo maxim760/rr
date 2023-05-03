@@ -23,9 +23,6 @@ class GoodsController {
                 }
                 const data = yield goods_repo_1.goodsRepo
                     .createQueryBuilder("goods")
-                    .leftJoinAndSelect("goods.products", "products")
-                    .leftJoin("product_goods", "pg", "pg.goods_id = goods.id")
-                    .leftJoin("products", "product", "product.id = pg.product_id")
                     .where([
                     { name: (0, typeorm_1.ILike)(`%${query}%`) },
                     { description: (0, typeorm_1.ILike)(`%${query}%`) },
@@ -35,11 +32,6 @@ class GoodsController {
                     qb.where("goods.currentPrice <= :max", { max: Math.max(0, max) })
                         .orWhere("0 = :max", { max: Math.max(0, max) });
                 }))
-                    .andWhere("pg.goods_id = goods.id")
-                    .addSelect(subQuery => subQuery.select("MIN(product.count)", "left")
-                    .from("product_goods", "pg")
-                    .leftJoin("products", "product", "product.id = pg.product_id")
-                    .where("pg.goods_id = goods.id"), "goods_left")
                     .getMany();
                 return res.json(data);
             }

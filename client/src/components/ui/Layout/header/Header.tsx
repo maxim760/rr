@@ -125,10 +125,10 @@ export const Header: FC<IProps> = ({}) => {
                   </NavbarLink>
                 </ListItem>
               ))}
-              {user && (<ListItem>
-                  <Button onClick={onClickLogout} sx={{ color: 'black' }}>
-                    Выйти
-                  </Button>
+              {user && (<ListItem key="logout" disablePadding>
+                    <NavbarLink to={RouterPaths.Login} onClick={onClickLogout} classesInner>
+                      <ListItemText primary={item.title} className="link" />
+                    </NavbarLink>
                   </ListItem>
               )}
             </List>
